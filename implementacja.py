@@ -20,19 +20,24 @@ wwb_R = 1
 
 n = 100
 
+
 def GenerujTabliceGeometrii(x_0,x_p,n):
-    val = (x_p - x_0) / (n - 1)
+    
+    val = (x_p-x_0)/(n-1)
     tablica = np.array([x_0])
+    for indeks_tab in range(1,n,1):
+        tablica = np.block([tablica, indeks_tab * val + x_0])
+    return indeks_tab,tablica
 
-    for i in range(1, n, 1):
-        tablica = np.block([tablica, i * val + x_0])
-    return i,tablica
-
-
-
-# print(GenerujTabliceGeometrii(0,1,4))
 
 Wezly, Tablica = GenerujTabliceGeometrii(0,1,4)
-print('Liczba wezlow: ', Wezly+1)
+Liczba_wezlow = Wezly + 1
+print('Liczba wezlow: ', Liczba_wezlow)
 print('Tablica wezlow: ', Tablica)
+
+
+
+
+
+
 
