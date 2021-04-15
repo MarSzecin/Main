@@ -53,9 +53,6 @@ def Rysuj_geometrie(tablica1,tablica2, n):
     
     
 
-
-
-
 Wezly, Tablica1, Tablica2 = GenerujTabliceGeometrii(0,1,4)
 Rysuj_geometrie(Tablica1, Tablica2, Wezly+1)
 Liczba_wezlow = Wezly + 1
